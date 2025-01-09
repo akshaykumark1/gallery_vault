@@ -9,9 +9,11 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'style2.css' %}">
 <style>
-    
+    body{
+        background: linear-gradient(90deg, #C7C5F4, #776BCC);
+    }
 button{
-    background-color: #fb641b;
+    background-color:#4CAF50;
     color: white;
     border: none;
     padding: 12px;
@@ -24,7 +26,14 @@ button{
 }
 
 button:hover {
-    background-color: #e29016;
+    background-color:#45a049;
+}
+a{
+    display: flex;
+    justify-content: center;
+}
+.container {
+        background: linear-gradient(90deg, #C7C5F4, #b3ace6);
 }
 </style>
 
@@ -55,7 +64,7 @@ button:hover {
             </div>
             <button class="login">login</button>
         </form>
-        <a id="Signup" href="{% url 'signup' %}">Sign up</a>
+       <a id="Signup" href="{% url 'signup' %}">sign up</a>
         <a class="forgot-password" href="#">Forgot Password?</a>
     </div>
 </body>
