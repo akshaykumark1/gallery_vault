@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style1.css' %}">
+  <title>Document</title>
+  <style>
+    
+    button{
+        background-color: #fb641b;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        /* width: 100%; */
+          /* font-size: 16px; */
+        transition: background-color 0.3s ease;
+        /* margin-top: 15px; */
+    }
+    
+    button:hover {
+        background-color: #e29016;
+    }
+    </style>
+    
+  
+</head>
+<body>
+  <nav><h2>Your Gallery Vault</h2>  <a href="{% url 'upload_image' %}">Upload New Image</a>
+ <button><a href="{% url 'logout_g' %}">LOG OUT</a></button> 
+
+  </nav>
+<ul>
+  {% for image in user_images %}
+    <li>
+      <img src="{{ image.image.url }}" alt="{{ image.title }}" width="100">
+
+      <a href="{% url 'delete' image.id %}">delete</a>
+
+      <h3 class="title">{{ image.title }}</h3>
+      <p class="description">{{ image.description }}</p>
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
